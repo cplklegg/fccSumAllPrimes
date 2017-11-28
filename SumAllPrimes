@@ -1,0 +1,41 @@
+Sum all the prime numbers up to and including the provided number.
+
+A prime number is defined as a number greater than one and having only two divisors, one and itself. For example, 2 is a prime number because it's only divisible by one and two.
+
+The provided number may not be a prime.
+
+Remember to use Read-Search-Ask if you get stuck. Try to pair program. Write your own code.
+
+Here are some helpful links:
+
+For Loops
+Array.prototype.push()
+
+code:
+
+function sumPrimes(num) {
+  if (num < 2) { 
+    return 0;
+  }
+ 
+  var ans = 2; 
+  for (var i = 3; i <= num; i += 2) {
+    if (isPrime(i)) {
+      ans += i;
+    }
+  }
+ 
+  return ans;
+ 
+  function isPrime(num) {
+    if (num <= 1) {
+      return false;
+    }
+    for (var i = 2; i <= num / 2; i++) {
+      if (num % i === 0) {
+        return false;
+      }
+    }
+    return true;
+  }
+}
